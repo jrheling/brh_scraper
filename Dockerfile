@@ -15,7 +15,7 @@ COPY scrapy_project/* /scrapy/
 CMD echo "configuring from ENV"
 # FIXME: add empty var checking
 CMD echo "##### spider-specific settings" >> /scrapy/brh_scraper_settings.py
-CMD echo "SHEETSU_API_URL = \"$(SHEETSU_API_URL)\" >> /scrapy/brh_scraper/settings.py
+CMD echo "SHEETSU_API_URL = \"$(SHEETSU_API_URL)\"">> /scrapy/brh_scraper/settings.py
 
 #VOLUME /scrapy
 #RUN pip install dateparser
