@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for A277928 project
+# Scrapy settings for brh_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'A277928'
+BOT_NAME = 'brh_scraper'
 
-SPIDER_MODULES = ['A277928.spiders']
-NEWSPIDER_MODULE = 'A277928.spiders'
+SPIDER_MODULES = ['brh_scraper.spiders']
+NEWSPIDER_MODULE = 'brh_scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'A277928 (+http://www.yourdomain.com)'
+#USER_AGENT = 'brh_scraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'A277928.middlewares.A277928SpiderMiddleware': 543,
+#    'brh_scraper.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'A277928.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'brh_scraper.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +64,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'A277928.pipelines.A277928Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'brh_scraper.pipelines.SheetsuPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -87,8 +87,9 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
-#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-FEED_URI = 'stdout:'
-FEED_FORMAT = 'csv'
-
+#### spider-specific config
+SHEETSU_API_URL = "https://sheetsu.com/apis/v1.0su/<YOUR_URL_HERE>"
+SHEETSU_API_KEY = "<YOUR_KEY_HERE>"
+SHEETSU_API_SECRET = "<YOUR_SECRET_HERE>"
