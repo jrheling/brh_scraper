@@ -13,6 +13,9 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /scrapy
 COPY scrapy_project/brh_scraper /scrapy/brh_scraper/
 COPY scrapy_project/scrapy.cfg /scrapy/
+COPY run_scraper.sh /scrapy/
+
+ENTRYPOINT ["/scrapy/run_scraper.sh"]
 
 
 #VOLUME /scrapy
