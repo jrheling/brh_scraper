@@ -13,11 +13,7 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /scrapy
 COPY scrapy_project/brh_scraper /scrapy/brh_scraper/
 COPY scrapy_project/scrapy.cfg /scrapy/
-CMD ls -l /scrapy
-CMD echo "configuring from ENV"
-# FIXME: add empty var checking
-CMD echo "##### spider-specific settings" >> /scrapy/brh_scraper_settings.py
-CMD echo "SHEETSU_API_URL = \"$(SHEETSU_API_URL)\"">> /scrapy/brh_scraper/settings.py
+
 
 #VOLUME /scrapy
 #RUN pip install dateparser
