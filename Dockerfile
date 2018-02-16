@@ -11,7 +11,7 @@ RUN echo US/Central > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 RUN mkdir /scrapy
-COPY scrapy_project/* /scrapy
+COPY scrapy_project/* /scrapy/
 CMD echo "configuring from ENV"
 # FIXME: add empty var checking
 CMD echo "##### spider-specific settings" >> /scrapy/brh_scraper_settings.py
