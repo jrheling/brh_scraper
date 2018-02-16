@@ -18,5 +18,5 @@ RUN rm -rf /usr/local/lib/python2.7/site-packages/sheetsu
 RUN mv my_sheetsu/sheetsu /usr/local/lib/python2.7/site-packages/
 
 
-#ENTRYPOINT ["/scrapy/run_scraper.sh"]
+ENTRYPOINT ["/scrapy/run_scraper.sh"]
 
