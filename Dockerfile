@@ -15,7 +15,7 @@ COPY scrapy_project/brh_scraper /scrapy/brh_scraper/
 COPY scrapy_project/scrapy.cfg /scrapy/
 COPY run_scraper.sh /scrapy/
 
-ENTRYPOINT ["/scrapy/run_scraper.sh"]
+#ENTRYPOINT ["/scrapy/run_scraper.sh"]
 
 
 #VOLUME /scrapy
