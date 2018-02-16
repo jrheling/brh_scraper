@@ -11,7 +11,7 @@ RUN echo US/Central > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 RUN mkdir /scrapy
-COPY scrapy_project/brh_scraper scrapy_project/scrapy.cfg /scrapy/
+COPY scrapy_project/brh_scraper/ scrapy_project/scrapy.cfg /scrapy/
 CMD ls -l /scrapy
 CMD echo "configuring from ENV"
 # FIXME: add empty var checking
