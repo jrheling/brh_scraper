@@ -34,7 +34,7 @@ class SheetsuPipeline(object):
             dt = dt - timedelta(days=1)
         return "%s-%s-%s" % (dt.year, dt.month, dt.day)
 
-    def __init__(self, row_limit=3, sheet_name="Sheet1"):
+    def __init__(self, row_limit=21, sheet_name="Sheet1"):
         self.client = None
         self.rowdata = {}
         self.ROW_LIMIT = row_limit # sheetsu free access only supports up to 50 rows / sheet

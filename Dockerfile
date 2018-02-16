@@ -2,9 +2,6 @@
 # 
 
 FROM scrapinghub/scrapinghub-stack-scrapy:1.1 as scrapy
-# here for build/debug work
-#RUN apt-get install less
-#COPY /vimrc.txt /root/.vimrc
 
 RUN pip install sheetsu
 RUN echo US/Central > /etc/timezone
@@ -15,12 +12,11 @@ COPY scrapy_project/brh_scraper /scrapy/brh_scraper/
 COPY scrapy_project/scrapy.cfg /scrapy/
 COPY run_scraper.sh /scrapy/
 
+# temp hack until my PR is merged
+RUN git clone https://github.com/jrheling/sheetsu-python.git --branch add_destroy --single-branch my_sheetsu
+RUN rm -rf /usr/local/lib/python2.7/site-packages/sheetsu
+RUN mv my_sheetsu/sheetsu /usr/local/lib/python2.7/site-packages/
+
+
 #ENTRYPOINT ["/scrapy/run_scraper.sh"]
 
-
-#VOLUME /scrapy
-#RUN pip install dateparser
-# FIXME: make this run as non-root?
-#COPY scrapy_project /scrapy
-#RUN python /scrapy/setup.py install
-#CMD cd /scrapy && scrapy crawl www.wsj.com
