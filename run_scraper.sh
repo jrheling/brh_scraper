@@ -1,8 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-TGT="/scrapy/brh_scraper_settings.py"
+TGT="/scrapy/brh_scraper/settings.py"
 
 echo "configuring from ENV"
-# FIXME: add empty var checking
+
+: ${SHEETSU_API_URL:?"Missing SHEETSU_API_URL in environment"}
+: ${SHEETSU_API_KEY:?"Missing SHEETSU_API_KEY in environment"}
+: ${SHEETSU_API_SECRET:?"Missing SHEETSU_API_SECRET in environment"}
+
 echo "##### spider-specific settings" >> ${TGT}
-echo "SHEETSU_API_URL = \"$(SHEETSU_API_URL)\"">> ${TGT}
+echo "SHEETSU_API_URL = \"${SHEETSU_API_URL}\"">> ${TGT}
+echo "SHEETSU_API_KEY = \"${SHEETSU_API_KEY}\"">> ${TGT}
+echo "SHEETSU_API_SECRET = \"${SHEETSU_API_SECRET}\"">> ${TGT}
