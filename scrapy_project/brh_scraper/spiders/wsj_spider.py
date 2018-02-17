@@ -10,7 +10,7 @@ class WSJSpider(scrapy.Spider):
             "Ryan 3-Month Treasury Index" : '//table[contains(@class,"mdcTable")]/descendant::td[contains(.,"3 Month Treasury")]/parent::*/td[contains(@class,"num")][1]/text()',
             "Ryan 3-Month Treasury Current" : '//table[contains(@class,"mdcTable")]/descendant::td[contains(.,"3 Month Treasury")]/parent::*/td[contains(@class,"num")][2]/text()'
             },
-        "http://www.wsjf.com/mdc/public/page/2_3022-bondbnchmrk.html?mod=topnav_2_3022" : {
+        "http://www.wsj.com/mdc/public/page/2_3022-bondbnchmrk.html?mod=topnav_2_3022" : {
             "Barclays US Aggregate Index" : '//table[contains(@class,"mdcTable")]/descendant::td[contains(.,"Barclays Aggregate")]/parent::*/td[contains(@class,"pnum")][1]/text()'
             }
         }
