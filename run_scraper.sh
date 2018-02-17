@@ -14,4 +14,5 @@ echo "SHEETSU_API_KEY = \"${SHEETSU_API_KEY}\"">> ${TGT}
 echo "SHEETSU_API_SECRET = \"${SHEETSU_API_SECRET}\"">> ${TGT}
 
 echo "running scraper"
-cd /scrapy/ && scrapy crawl wsj_com
+cd /scrapy/ 
+exec scrapy crawl wsj_com
