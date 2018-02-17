@@ -44,12 +44,12 @@ class SheetsuPipeline(object):
         rows = self.client.read(sheet=self.sheet)
         rows_to_remove = None
         row_count = len(rows)
-        print("************ %d rows:" % row_count)
-        for i in range(0, row_count):
-            print("%d: %s" % (i, rows[i]))
+        #print("************ %d rows:" % row_count)
+        #for i in range(0, row_count):
+        #    print("%d: %s" % (i, rows[i]))
         if len(rows) >= self.ROW_LIMIT:
             rows_to_remove = len(rows) + 1 - self.ROW_LIMIT
-            print("*************** removing %d" % rows_to_remove)
+            #print("*************** removing %d" % rows_to_remove)
 
         # BEWARE - there's an implicit assumption that there's only one row per date
         #  - this code treats "Closing Date" like an index; if "Closing Date" isn't unique
@@ -81,3 +81,4 @@ class SheetsuPipeline(object):
 
     def close_spider(self, spider):
         self.client.create_many(sheet="Sheet1", *[self.rowdata])
+        spider.logger.info("CLOSING SPIDER AFTER WRITING %d COLUMNS", len(self.rowdata))
