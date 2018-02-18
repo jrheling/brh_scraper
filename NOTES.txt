@@ -1,1 +1,0 @@
-.zip was exported from scrapinghub.com - developed using Portia visual scraper design tool, exported for exectuion by scrapy
