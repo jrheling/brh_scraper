@@ -89,7 +89,6 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-#### spider-specific config
-SHEETSU_API_URL = "https://sheetsu.com/apis/v1.0su/<YOUR_URL_HERE>"
-SHEETSU_API_KEY = "<YOUR_KEY_HERE>"
-SHEETSU_API_SECRET = "<YOUR_SECRET_HERE>"
+## SHEETSU_API_* settings are added below at container runtime
+
+
