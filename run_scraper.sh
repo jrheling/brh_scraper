@@ -9,6 +9,8 @@
 # 0 : success
 # 1 : crawler didn't finish
 # 2 : crawler finished, but didn't write the expected number of data columns
+#
+# This may be run from cron, so it has no output unless something went wrong.
 
 # support structure for godawful error detecting hack below - needs to change whenever
 #   the number of columns collected changes
@@ -16,7 +18,7 @@ EXPECTED_COL_COUNT=4
 
 TGT="/scrapy/brh_scraper/settings.py"
 
-echo "configuring from ENV"
+#echo "configuring from ENV"
 
 : ${SHEETSU_API_URL:?"Missing SHEETSU_API_URL in environment"}
 : ${SHEETSU_API_KEY:?"Missing SHEETSU_API_KEY in environment"}
@@ -27,7 +29,7 @@ echo "SHEETSU_API_URL = \"${SHEETSU_API_URL}\"">> ${TGT}
 echo "SHEETSU_API_KEY = \"${SHEETSU_API_KEY}\"">> ${TGT}
 echo "SHEETSU_API_SECRET = \"${SHEETSU_API_SECRET}\"">> ${TGT}
 
-echo "running scraper"
+#echo "running scraper"
 cd /scrapy/
 TMPFILE=`mktemp`
 scrapy crawl wsj_com 2>${TMPFILE}
