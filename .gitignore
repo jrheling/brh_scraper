@@ -1,5 +1,2 @@
-backup_from_container/
-crun.sh
-scrapy_project/brh_scraper/settings.py.PRIVATE
 */.*.swp
 container_runfile_with_creds.sh.txt
