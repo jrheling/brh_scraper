@@ -1,11 +1,11 @@
-Run following each market business day to scrape a few bits of price data that aren't
-easy to get historically, and write them to a three-week rolling window in a google
-sheet.
+Run following each market business day to scrape a few bits of price data 
+that aren't easy to get historically, and write them to a three-week rolling 
+window in a google sheet.
 
 ### Building
 
-Note: this is pretty unsophisticated build process; among other things, it assumes
-everything is happening from trunk (master).
+Note: this is pretty unsophisticated build process; among other things, it 
+assumes everything is happening from trunk (master).
 
 * Commit updates to repo
 * Build tagged docker image:
